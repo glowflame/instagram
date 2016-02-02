@@ -15,7 +15,6 @@ body{
     font-size: 44px;
 }
 
-
 .left_menu{
     border-right: 1px solid #e5e5e5;
    padding: 15px 20px;
@@ -130,6 +129,7 @@ body{
 .content{
     order:2;
     width: 100%;
+    margin: 27px 0px 0px 0 ;
 }
 
 .contentHeader{
