@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="http://allfont.ru/allfont.css?fonts=open-sans" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<div class="header">
+    <div class="left_menu">
+
+   <a  href="index.html" class="home_icon" hidden="hidden">
+        <i class="fa fa-home"></i>
+   </a>
+
+    </div>
+
+    <div class="container_logo">
+        <a href="index.html" title="На главную">
+        <img src="images/logo.png" class="logo">
+        </a>
+    </div>
+
+    <div class="right_menu" >
+        <a href="/" title="Мой профиль" class="right_menu_a">
+
+
+        </a>
+    </div>
+
+
+
+</div>
+<div class="searchRowBlock">
+
+    <input type="text" class="searchRow" placeholder="mafiaboss" value=mafiaboss id="hashtagSearchRow">
+    <button class="buttonSearch">искать</button></div>
+
+<div class="page">
+
+    <div class="left_block">
+
+        <div class="profileBlock">
+
+            <img src="images/7.jpg" class="avatar">
+
+            <h1 class="profileName">DOGE</h1>
+            <h2 class="profileDescription">Doge, The Doge</h2>
+            <h3 class="profileLowerDescription">blahblah blahblah blahblahblah blahblah blahblahblah blahblah blah</h3>
+
+            <button class="followButton">Following</button>
+            <br> <br>
+
+            <div class="profileBlockBottom">
+
+                <div class="profileBlockFollowers"> <h3>41,445</h3>Followers
+                </div>
+
+                <div class="profileBlockFollowing"> <h3>878</h3>Following
+                </div>
+            </div>
+
+            <div class="profileBottomLink">
+                <img src="images/browser-icon.png" width="30px">dogedoggs.com
+            </div>
+        </div>
+
+
+        <div class="recommended">
+            <h1>ALSO RECOMMENDED</h1>
+            <div class="item">
+
+                <div class="recImg">
+               <img src="images/1.jpg">
+                </div>
+                <div class="recName">
+                    <h3>BLAH BLAH </h3>
+                blah blah blah
+                </div>
+
+            </div>
+
+            <div class="item">
+
+                <div class="recImg">
+                    <img src="images/1.jpg">
+                </div>
+                <div class="recName">
+                    <h3>BLAH BLAH </h3>
+                    blah blah blah
+                </div>
+
+            </div>
+
+            <div class="item">
+
+                <div class="recImg">
+                    <img src="images/1.jpg">
+                </div>
+                <div class="recName">
+                    <h3>BLAH BLAH </h3>
+                    blah blah blah
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="content" id="content">
+
+        <div class=contentHeader>
+        <div class="calc">264 POSTS</div>
+
+            <div class="menu">
+                <a><i class="fa fa-th"></i></a>
+                <a><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+
+        <div class="contentPhotos">
+
+        </div>
+
+        <div class="buttonMoreContainer">
+
+        </div>
+
+        </div>
+    </div>
+
+
+</div>
+<div class="footer">
+
+</div>
+
+
+
+
+</body>
+
+<script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+    $(function (){
+        content = $('.contentPhotos');
+        photo = $('#photoMore');
+    //http://localhost:63342/instagram/#access_token=1273986390.3904bbe.64b4fd3142d4488791555ad1b4105724
+
+        //https://api.instagram.com/v1/users/glowflame146/?access_token=1273986390.3904bbe.64b4fd3142d4488791555ad1b4105724
+
+        function addProfilePicture(){
+            $.getJSON("https://api.instagram.com/v1/users/self/?callback=?&access_token=1273986390.3904bbe.64b4fd3142d4488791555ad1b4105724", function(JSON) {
+
+                    var urlAvatar = JSON.data.profile_picture;
+                $(".right_menu_a").append("<img src="+urlAvatar+" class=myProfile>");
+             
+            });
+
+        }
+        addProfilePicture();
+
+        access_token= document.location.href.split("access_token=")[1];
+
+
+
+        $("#hashtagSearchRow").keypress(function(){
+            $(content).empty();
+            hashtag = document.getElementById("hashtagSearchRow").value;
+            setPhotosWithHashtag(hashtag);
+        });
+
+        $(".buttonSearch").click(function(){
+            $(content).empty();
+            hashtag = document.getElementById("hashtagSearchRow").value;
+            setPhotosWithHashtag(hashtag);
+
+        });
+
+        $(".buttonMore").click(function(){
+            $(content).empty();
+            hashtag = document.getElementById("hashtagSearchRow").value;
+            setPhotosWithHashtag(hashtag);
+        })
+
+    });
+
+    function setPhotosWithHashtag(hashtag){
+        $.getJSON("https://api.instagram.com/v1/tags/"+hashtag+"/media/recent?callback=?&count=14&access_token="+access_token, function(json) {
+            for (i=0; i<14; i++){
+                var url = json.data[i].images.low_resolution.url;
+                addImage(url);
+            }
+        });
+        $('.buttonMoreContainer').empty();
+        $('.buttonMoreContainer').append(" <button class=buttonMore id=buttonMore>ЕЩЁ</button> ");
+    }
+
+    function addImage(url){
+
+            $(content).append(" <div class='photo1' style='background-image: url("+url+") ;' id='photoMore'> </div>");
+    };
+
+
+</script>
+</html>
