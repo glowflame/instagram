@@ -121,7 +121,6 @@ body {
   font-size: 17px;
   background-image: url("../images/checkmark.png");
   background-size: 20px;
-  background-position: center;
   background-repeat: no-repeat;
   background-position: 25px;
   outline: 0;
@@ -242,7 +241,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0px 2px 3px 0.2px rgba(50, 50, 50, 0.5);
   text-align: center;
-  font-family: open sans;
+  font-family: "open sans";
   border-bottom: 0 ;
   width: 290px;
 }
