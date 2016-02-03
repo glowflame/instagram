@@ -1,6 +1,5 @@
 body{
     margin: 0;
-
 }
 
 .header{
@@ -76,13 +75,13 @@ body{
 
 }
 
-.searchRowBlock{
+.searchrow-Block{
     text-align: center;
-    background-color:#f8fafa ;
+    background-color: #e55142;
+    color: red;
     display: table;
     width: 100%;
     padding-top: 10px ;
-
 }
 
 .searchRow {
@@ -98,9 +97,10 @@ body{
     background-repeat: no-repeat; /*Убираем повтор изображения*/
     background-position: 8px;
     background-size: 25px;
+    display: table-cell;
 }
 
-.buttonSearch{
+.button{
     width: 130px;
     height: 50px;
     margin-left:5px;
@@ -111,6 +111,7 @@ body{
     font-size: 32px;
     position: relative;
     outline: 0;
+    display: table-cell;
 }
 
 .buttonSearch:hover{

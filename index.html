@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <link href="css/main1.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
     <link href="http://allfont.ru/allfont.css?fonts=open-sans" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -38,7 +39,7 @@
 <div class="searchRowBlock">
 
     <input type="text" class="searchRow" placeholder="mafiaboss" value=mafiaboss id="hashtagSearchRow">
-    <button class="buttonSearch">искать</button></div>
+    <button class="button">искать</button></div>
 
 <div class="page">
 
@@ -113,9 +114,7 @@
 
 
 
-
     <div class="content" id="content">
-
 
 
         <div class="contentPhotos">
@@ -199,7 +198,7 @@
 
     function addImage(url){
 
-            $(content).append(" <div class='photo1' style='background-image: url("+url+") ;' id='photoMore'> </div>");
+            $(content).append(" <div class='photo' style='background-image: url("+url+") ;' id='photoMore'> </div>");
     };
 
 
