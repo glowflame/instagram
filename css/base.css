@@ -83,10 +83,6 @@ body {
   background-color: #2788d1;
   border-color: #2788d1;
 }
-.page {
-  width: 100%;
-  background-color: #fdfbf2;
-}
 .photo {
   width: 200px;
   height: 200px;
@@ -133,88 +129,6 @@ body {
 .followButton:hover {
   box-shadow: 0px 2px 3px 0.2px rgba(50, 50, 50, 0.5);
 }
-.followButton img {
-  margin-bottom: -4px;
-}
-.profileBlockBottom {
-  display: table;
-  color: #353535;
-  font-weight: 300;
-}
-.profileBlockFollowers {
-  display: table-cell;
-  width: 145px;
-  border-right: 1px solid #e5e5e5;
-  padding: 20px 0;
-  border-bottom: solid 1px #e5e5e5;
-  border-top: solid 1px #e5e5e5;
-  color: #919191;
-}
-.profileBlockFollowing {
-  color: #919191;
-  display: table-cell;
-  width: 145px;
-  border-bottom: solid 1px #e5e5e5;
-  border-top: solid 1px #e5e5e5;
-}
-.profileBottomLink {
-  padding: 20px 25px;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 400;
-  color: #a6a6a6;
-  font-family: "open sans";
-}
-.profileBottomLink img {
-  margin: -6px 3px -11px 0px;
-}
-.recommended h1 {
-  font-size: 19px;
-  font-weight: 400;
-  color: #919191;
-  font-family: "open sans";
-}
-.recommended {
-  margin-top: 75px;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 400;
-  color: #a6a6a6;
-  font-family: "open sans";
-}
-.item {
-  display: table;
-  margin: 20px 0;
-}
-.recommended img {
-  border-radius: 50%;
-  width: 58px;
-  display: table-cell;
-  box-shadow: 0px 2px 3px 0.2px rgba(50, 50, 50, 0.5);
-}
-.recommended h3 {
-  margin: 0px 0 3px 0;
-  color: #272727;
-}
-.profileBlockBottom h3 {
-  margin: 0px 0 0px 0;
-  color: #272727;
-  padding: 0;
-}
-.recImg {
-  display: table-cell;
-  vertical-align: middle;
-}
-.recName {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 10px;
-}
-.footer {
-  text-align: center;
-  background-color: #fdfbf2;
-  padding-bottom: 20px;
-}
 .buttonMore {
   background-color: transparent;
   width: 150px;
@@ -231,8 +145,4 @@ body {
 .buttonMore:hover {
   border: solid 6px #2788d1;
   color: #2788d1;
-}
-.buttonMoreContainer {
-  width: 100%;
-  text-align: center;
 }
